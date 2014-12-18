@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		{5F56CB77-C305-497C-9F9E-D810CE587B43} = s 'OutProcCom'
+		'OutProcCom.EXE'
+		{
+			val AppID = s {5F56CB77-C305-497C-9F9E-D810CE587B43}
+		}
+	}
+}
