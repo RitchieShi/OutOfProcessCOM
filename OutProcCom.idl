@@ -1,0 +1,43 @@
+// OutProcCom.idl : IDL source for OutProcCom.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (OutProcCom.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(FA3F042D-7C98-49B6-A636-A095AB97CED1),
+		dual,
+		helpstring("ISampleObj Interface"),
+		pointer_default(unique)
+	]
+	interface ISampleObj : IDispatch
+	{		
+		[propget, id(2), helpstring("property get_add")]
+		HRESULT get_add([in] int a, [in] int b, [out, retval] long *pVal);
+		
+		[propput, id(2), helpstring("property get_add")]
+		HRESULT get_add([in] int a, [in] int b, [in] long newVal);
+	};
+
+[
+	uuid(B7ADF56D-F1CF-40A9-A332-34DCBE4378A1),
+	version(1.0),
+	helpstring("OutProcCom 1.0 Type Library")
+]
+library OUTPROCCOMLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(7013D610-C41D-415A-BAF7-879D07003BE5),
+		helpstring("SampleObj Class")
+	]
+	coclass SampleObj
+	{
+		[default] interface ISampleObj;
+	};
+};
