@@ -1,0 +1,24 @@
+HKCR
+{
+	OutProcCom.SampleObj.1 = s 'SampleObj Class'
+	{
+		CLSID = s '{7013D610-C41D-415A-BAF7-879D07003BE5}'
+	}
+	OutProcCom.SampleObj = s 'SampleObj Class'
+	{
+		CLSID = s '{7013D610-C41D-415A-BAF7-879D07003BE5}'
+		CurVer = s 'OutProcCom.SampleObj.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {7013D610-C41D-415A-BAF7-879D07003BE5} = s 'SampleObj Class'
+		{
+			ProgID = s 'OutProcCom.SampleObj.1'
+			VersionIndependentProgID = s 'OutProcCom.SampleObj'
+			ForceRemove 'Programmable'
+			LocalServer32 = s '%MODULE%'
+			val AppID = s '{5F56CB77-C305-497C-9F9E-D810CE587B43}'
+			'TypeLib' = s '{B7ADF56D-F1CF-40A9-A332-34DCBE4378A1}'
+		}
+	}
+}
